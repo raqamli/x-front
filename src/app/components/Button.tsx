@@ -19,6 +19,7 @@ const Btn = styled.button`
   font-weight: 700;
   line-height: ${calcRem(39)};
   letter-spacing: 0em;
+  cursor: pointer;
 `;
 
 

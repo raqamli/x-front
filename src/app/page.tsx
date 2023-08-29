@@ -1,19 +1,17 @@
 'use client';
 
-import theme from '@/styles/theme';
+import theme, { calcRem } from '@/styles/theme';
 import styled from 'styled-components';
 import { Button } from './components/Button';
+import { Title } from './components/Title';
 
-const Container = styled.div<{}>`
-  // display: grid;
-  // grid-template-columns: repeat(3, minmax(0, 1fr));
-  // gap: 1.5rem /* 24px */;
+const Container = styled.div<{ $vertical?: boolean, $minWidth?: number, $minHeight?: number }>`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${props => props.$vertical ? "column" : "row"};
   justify-content: center;
   align-items: center;
-  min-width: 100vw;
-  min-height: 100vh;
+  min-width: ${({ $minWidth }) => $minWidth ? calcRem($minWidth) : "100vw"} ;
+  min-height: ${({ $minHeight }) => $minHeight ? calcRem($minHeight) : "100vh"} ;
   border: red solid 1px;
 `;
 
@@ -64,8 +62,12 @@ const Skeleton = () => (
 
 export default function Page() {
   return (
-    <Container>
-      <Button title="Hududga kettik" emoji="🚀" />
+    <Container $vertical>
+      <Container>
+        <Title text="Spaces" mutedText='X' />
+        <Button title="Hududga kettik" emoji="🚀" />
+
+      </Container>
     </Container>
   );
 }

@@ -3,6 +3,7 @@ import { calcRem } from '@/styles/theme';
 
 type TitlePropsType = {
     text: string;
+    mutedText?: string;
 }
 
 const H1 = styled.h1`
@@ -12,12 +13,21 @@ const H1 = styled.h1`
   line-height: ${calcRem(70)};
   letter-spacing: 0em;
   text-align: left;
+  color: #464646;
+  border: red solid 1px;
+  font-family: 'Paytone One', sans-serif;
 `;
 
+const Muted = styled.span`
+  color: #9D9D9D;
+`
 
-export function Button({ text }: TitlePropsType) {
+
+export function Title({ text, mutedText }: TitlePropsType) {
+
     return (
         <H1 >
+            {mutedText && <Muted>{mutedText}</Muted>}
             {text}
         </H1>
     )
