@@ -8,11 +8,14 @@ import theme from './theme';
 const GlobalStyle = createGlobalStyle`
     
     // Monserrat Google fonts
-    @import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
     
     // Paytoen One Google fonts
-    @import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Paytone+One&family=Quicksand:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
     
+    // Days One Google fonts
+    @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
     * {
         box-sizing: border-box;
     }

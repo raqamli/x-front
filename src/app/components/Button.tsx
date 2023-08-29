@@ -3,10 +3,10 @@ import theme, { calcRem } from '@/styles/theme';
 
 type ButtonPropsType = {
     title: string;
-    emoji: string;
+    padding: string;
 }
 
-const Btn = styled.button`
+const Btn = styled.button < { $padding?: string }>`
   width: ${calcRem(426)};
   height: ${calcRem(67)};
   background-color: #1E1E1E;
@@ -20,13 +20,14 @@ const Btn = styled.button`
   line-height: ${calcRem(39)};
   letter-spacing: 0em;
   cursor: pointer;
+  padding: ${({ $padding }) => $padding}
 `;
 
 
-export function Button({ title = "Default title", emoji }: ButtonPropsType) {
+export function Button({ title = "Default title", padding }: ButtonPropsType) {
     return (
-        <Btn >
-            {title} {emoji}
+        <Btn $padding={padding}>
+            {title}
         </Btn>
     )
 }

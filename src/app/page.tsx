@@ -4,12 +4,13 @@ import theme, { calcRem } from '@/styles/theme';
 import styled from 'styled-components';
 import { Button } from './components/Button';
 import { Title } from './components/Title';
+import { SubText } from './components/SubText'
 
-const Container = styled.div<{ $vertical?: boolean, $minWidth?: number, $minHeight?: number }>`
+const Container = styled.div<{ $vertical?: boolean, $minWidth?: number, $minHeight?: number, $alignItems?: string }>`
   display: flex;
   flex-direction: ${props => props.$vertical ? "column" : "row"};
   justify-content: center;
-  align-items: center;
+  align-items: ${({ $alignItems }) => $alignItems ? $alignItems : "center"} ;
   min-width: ${({ $minWidth }) => $minWidth ? calcRem($minWidth) : "100vw"} ;
   min-height: ${({ $minHeight }) => $minHeight ? calcRem($minHeight) : "100vh"} ;
   border: red solid 1px;
@@ -63,10 +64,16 @@ const Skeleton = () => (
 export default function Page() {
   return (
     <Container $vertical>
-      <Container>
+      <Container
+        $vertical
+        $minHeight={300}
+        $minWidth={300}
+        $alignItems='left'
+      >
         <Title text="Spaces" mutedText='X' />
-        <Button title="Hududga kettik" emoji="🚀" />
-
+        <SubText text="Markazning muvaffaqiyati kaliti 🔑" width={350} />
+        <SubText text='👋 davomat muammosi bilan hayrlashing!' isMuted={true} fSize={18} />
+        <Button title="Hududga kettik 🚀" />
       </Container>
     </Container>
   );

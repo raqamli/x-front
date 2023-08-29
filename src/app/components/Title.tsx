@@ -14,8 +14,9 @@ const H1 = styled.h1`
   letter-spacing: 0em;
   text-align: left;
   color: #464646;
-  border: red solid 1px;
   font-family: 'Paytone One', sans-serif;
+  width: 100%;
+  border: red solid 1px;
 `;
 
 const Muted = styled.span`
@@ -23,7 +24,7 @@ const Muted = styled.span`
 `
 
 
-export function Title({ text, mutedText }: TitlePropsType) {
+export function Title({ text, mutedText}: TitlePropsType) {
 
     return (
         <H1 >
