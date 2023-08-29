@@ -1,11 +1,20 @@
 'use client';
 
+import theme from '@/styles/theme';
 import styled from 'styled-components';
+import { Button } from './components/Button';
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem /* 24px */;
+const Container = styled.div<{}>`
+  // display: grid;
+  // grid-template-columns: repeat(3, minmax(0, 1fr));
+  // gap: 1.5rem /* 24px */;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  border: red solid 1px;
 `;
 
 const SkeletonInner = styled.div`
@@ -55,15 +64,8 @@ const Skeleton = () => (
 
 export default function Page() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-xl font-medium text-gray-400/80">
-        Styled with Styled Components
-      </h1>
-      <Container>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-      </Container>
-    </div>
+    <Container>
+      <Button title="Hududga kettik" emoji="🚀" />
+    </Container>
   );
 }
