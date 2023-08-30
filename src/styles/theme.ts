@@ -5,7 +5,7 @@ import { css } from 'styled-components';
   You can customize them as the design system of the project.
  */
 
-export const calcRem = (size: number) => `${size / 16}rem`;
+export const calcRem = (size: number) => `${(size) / 16}rem`;
 
 const fontSizes = {
   small: calcRem(14),
