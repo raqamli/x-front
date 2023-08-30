@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { calcRem } from '@/styles/theme';
 
 type TitlePropsType = {
-    text: string;
-    mutedText?: string;
-    margin?: string;
-}
+  text: string;
+  mutedText?: string;
+  margin?: string;
+};
 
 const H1 = styled.h1<{ $margin?: string }>`
   font-family: Paytone One;
@@ -17,20 +17,18 @@ const H1 = styled.h1<{ $margin?: string }>`
   color: #464646;
   font-family: 'Paytone One', sans-serif;
   width: 100%;
-  margin: ${({ $margin }) => $margin}
+  margin: ${({ $margin }) => $margin};
 `;
 
 const Muted = styled.span`
-  color: #9D9D9D;
-`
-
+  color: #9d9d9d;
+`;
 
 export function Title({ text, mutedText, margin }: TitlePropsType) {
-
-    return (
-        <H1 $margin={margin} >
-            {mutedText && <Muted>{mutedText}</Muted>}
-            {text}
-        </H1>
-    )
+  return (
+    <H1 $margin={margin}>
+      {mutedText && <Muted>{mutedText}</Muted>}
+      {text}
+    </H1>
+  );
 }

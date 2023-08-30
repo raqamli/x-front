@@ -2,14 +2,14 @@ import styled from 'styled-components';
 import { calcRem } from '@/styles/theme';
 
 type ButtonPropsType = {
-    title: string;
-    margin?: string;
-}
+  title: string;
+  margin?: string;
+};
 
-const Btn = styled.button < { $margin?: string }>`
+const Btn = styled.button<{ $margin?: string }>`
   width: ${calcRem(426)};
   height: ${calcRem(67)};
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
   border-radius: 1rem;
   border: none;
   outline: none;
@@ -20,14 +20,9 @@ const Btn = styled.button < { $margin?: string }>`
   line-height: ${calcRem(39)};
   letter-spacing: 0em;
   cursor: pointer;
-  margin: ${({ $margin }) => $margin}
+  margin: ${({ $margin }) => $margin};
 `;
 
-
-export function Button({ title = "Default title", margin }: ButtonPropsType) {
-    return (
-        <Btn $margin={margin}>
-            {title}
-        </Btn>
-    )
+export function Button({ title = 'Default title', margin }: ButtonPropsType) {
+  return <Btn $margin={margin}>{title}</Btn>;
 }
