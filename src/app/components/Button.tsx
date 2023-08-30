@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import theme, { calcRem } from '@/styles/theme';
+import { calcRem } from '@/styles/theme';
 
 type ButtonPropsType = {
     title: string;

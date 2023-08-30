@@ -20,8 +20,7 @@ const P = styled.p<{ $isMuted?: boolean, $width?: number, $fSize?: number, $marg
   margin: ${({ $margin }) => $margin};
   width: ${({ $width }) => $width ? calcRem($width) : "100%"};
   mix-blend-mode: hard-light;
-}
-`;
+}`;
 
 
 export function SubTitle({ text, isMuted, width, fSize, margin }: SubTitle) {
