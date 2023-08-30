@@ -3,10 +3,10 @@ import theme, { calcRem } from '@/styles/theme';
 
 type ButtonPropsType = {
     title: string;
-    padding: string;
+    margin?: string;
 }
 
-const Btn = styled.button < { $padding?: string }>`
+const Btn = styled.button < { $margin?: string }>`
   width: ${calcRem(426)};
   height: ${calcRem(67)};
   background-color: #1E1E1E;
@@ -20,13 +20,13 @@ const Btn = styled.button < { $padding?: string }>`
   line-height: ${calcRem(39)};
   letter-spacing: 0em;
   cursor: pointer;
-  padding: ${({ $padding }) => $padding}
+  margin: ${({ $margin }) => $margin}
 `;
 
 
-export function Button({ title = "Default title", padding }: ButtonPropsType) {
+export function Button({ title = "Default title", margin }: ButtonPropsType) {
     return (
-        <Btn $padding={padding}>
+        <Btn $margin={margin}>
             {title}
         </Btn>
     )
