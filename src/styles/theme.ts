@@ -5,7 +5,7 @@ import { css } from 'styled-components';
   You can customize them as the design system of the project.
  */
 
-const calcRem = (size: number) => `${size / 16}rem`;
+export const calcRem = (size: number) => `${size / 16}rem`;
 
 const fontSizes = {
   small: calcRem(14),
@@ -47,7 +47,8 @@ const margins = {
 const colors = {
   black: '#252525',
   white: '#F8F8F8',
-  yellow: '#f1c868'
+  yellow: '#f1c868',
+  light_background: '#FDFDFA'
 };
 
 const putCenter = css`

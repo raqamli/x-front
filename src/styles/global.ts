@@ -1,10 +1,21 @@
 // add use client
 
 import { createGlobalStyle } from 'styled-components';
+import theme from './theme';
 
 // Basic styling for the whole app
 
 const GlobalStyle = createGlobalStyle`
+    
+    // Monserrat Google fonts
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    
+    // Paytoen One Google fonts
+    @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+    
+    // Days One Google fonts
+    @import url('https://fonts.googleapis.com/css2?family=Days+One&display=swap');
+
     * {
         box-sizing: border-box;
     }
@@ -42,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
         height:100%;
         display:flex;
         flex-direction: column;
+        background-color: ${theme.colors.light_background};
     }
     ol, ul {
         list-style: none;
